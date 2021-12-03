@@ -1,0 +1,43 @@
+name: Lint & Test
+on: [push]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.7
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install black 
+          pip install isort
+          pip install docstr-coverage
+      - run: black huggingface/ additional_corruptions.py  create_png_examples.py  generator.py mnist_c.py postprocess.py --check
+      - run: isort huggingface/ additional_corruptions.py  create_png_examples.py  generator.py mnist_c.py postprocess.py --check-only --profile black
+      - run: docstr-coverage
+
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+        python-version: [3.7, 3.8, 3.9, "3.10"]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pillow
+          pip install datasets
+      - name: Test
+        run: |
+          cd huggingface
+          python test_huggingface.py
