@@ -52,17 +52,9 @@ It shares the same image size and structure of training and testing splits.
 _HOMEPAGE = "https://github.com/zalandoresearch/fashion-mnist"
 _LICENSE = "https://raw.githubusercontent.com/zalandoresearch/fashion-mnist/master/LICENSE"
 
-# _URL = "https://github.com/zalandoresearch/fashion-mnist/raw/master/data/fashion/"
-# _URLS = {
-#     "train_images": "train-images-idx3-ubyte.gz",
-#     "train_labels": "train-labels-idx1-ubyte.gz",
-#     "test_images": "t10k-images-idx3-ubyte.gz",
-#     "test_labels": "t10k-labels-idx1-ubyte.gz",
-# }
+_URL = "https://github.com/testingautomated-usi/fashion-mnist-c/raw/main/generated/ubyte/"
 
-_UBYTE_FILES = "./generated/ubyte"
-
-_FILES = {
+_URLS = {
     "train_images": "fmnist-c-train-ubyte.gz",
     "train_labels": "fmnist-c-train-labels-ubyte.gz",
     "test_images": "fmnist-c-test-ubyte.gz",
@@ -110,21 +102,21 @@ class FashionMnist(datasets.GeneratorBasedBuilder):
         )
 
     def _split_generators(self, dl_manager):
-        files = {key: os.path.join(_UBYTE_FILES, fname) for key, fname in _FILES.items()}
-        # downloaded_files = dl_manager.download_and_extract(urls_to_download)
+        urls_to_download = {key: _URL + fname for key, fname in _URLS.items()}
+        downloaded_files = dl_manager.download_and_extract(urls_to_download)
 
         return [
             datasets.SplitGenerator(
                 name=datasets.Split.TRAIN,
                 gen_kwargs={
-                    "filepath": [files["train_images"], files["train_labels"]],
+                    "filepath": [downloaded_files["train_images"], downloaded_files["train_labels"]],
                     "split": "train",
                 },
             ),
             datasets.SplitGenerator(
                 name=datasets.Split.TEST,
                 gen_kwargs={
-                    "filepath": [files["test_images"], files["test_labels"]],
+                    "filepath": [downloaded_files["test_images"], downloaded_files["test_labels"]],
                     "split": "test",
                 },
             ),

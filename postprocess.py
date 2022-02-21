@@ -17,6 +17,12 @@ def npy_to_ubyte():
                 else:
                     _write_imagedata(a, filename)
 
+                filename = os.path.join("./generated/dummy", f.replace(".npy", "-ubyte.gz"))
+                if 'label' in filename:
+                    _write_labeldata(a[:100], filename)
+                else:
+                    _write_imagedata(a[:100], filename)
+
 
 # https://github.com/davidflanagan/notMNIST-to-MNIST/blob/17823f4d4a3acd8317c07866702d2eb2ac79c7a0/convert_to_mnist_format.py#L92
 def _write_labeldata(labeldata, outputfile):
