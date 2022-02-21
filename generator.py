@@ -30,25 +30,22 @@ CORRUPTIONS: Dict[str, Callable[[np.ndarray], np.ndarray]] = {
     'flip_top_bottom': lambda x: additional_corruptions.turn_left(x),
 }
 
-EXTENDED_CORRUPTIONS: Dict[str, Callable[[np.ndarray], np.ndarray]] = \
-    CORRUPTIONS.update(
-        {
-            'gaussian_noise': lambda x: mnist_c.gaussian_noise(x),
-            'speckle_noise': lambda x: mnist_c.speckle_noise(x),
-            'pessimal_noise': lambda x: mnist_c.pessimal_noise(x),
-            'gaussian_blur': lambda x: mnist_c.gaussian_blur(x),
-            'defocus_blur': lambda x: mnist_c.defocus_blur(x),
-            'stripe': lambda x: mnist_c.stripe(x),
-            'spatter': lambda x: mnist_c.spatter(x),
-            'canny_edges': lambda x: mnist_c.canny_edges(x),
-            'zoom_blur': lambda x: mnist_c.zoom_blur(x),
-            'jpeg_compression': lambda x: mnist_c.jpeg_compression(x),
-            'elastic_transform': lambda x: mnist_c.elastic_transform(x),
-            'quantize': lambda x: mnist_c.quantize(x),
-            'translate': lambda x: mnist_c.translate(x),
-            'snow': lambda x: mnist_c.snow(x),
-        }
-    )
+# The following could potentially used for an "extended" dataset,
+#     but this is not implemented yet.
+# 'gaussian_noise': lambda x: mnist_c.gaussian_noise(x),
+# 'speckle_noise': lambda x: mnist_c.speckle_noise(x),
+# 'pessimal_noise': lambda x: mnist_c.pessimal_noise(x),
+# 'gaussian_blur': lambda x: mnist_c.gaussian_blur(x),
+# 'defocus_blur': lambda x: mnist_c.defocus_blur(x),
+# 'stripe': lambda x: mnist_c.stripe(x),
+# 'spatter': lambda x: mnist_c.spatter(x),
+# 'canny_edges': lambda x: mnist_c.canny_edges(x),
+# 'zoom_blur': lambda x: mnist_c.zoom_blur(x),
+# 'jpeg_compression': lambda x: mnist_c.jpeg_compression(x),
+# 'elastic_transform': lambda x: mnist_c.elastic_transform(x),
+# 'quantize': lambda x: mnist_c.quantize(x),
+# 'translate': lambda x: mnist_c.translate(x),
+# 'snow': lambda x: mnist_c.snow(x),
 
 
 # REMOVED MNIIST_C CORRUPTIONS:
@@ -74,24 +71,16 @@ def generate_mix_dataset(imgs: List[List[List[int]]], split: str) -> np.ndarray:
         corrupted_img = corruption(img_as_array)
         corrupted.append(corrupted_img)
     imgs = np.array(corrupted).astype(np.uint8)
-    np.save(f"generated/fmnist-c-{split}.npy", imgs)
+    np.save(f"generated/npy/fmnist-c-{split}.npy", imgs)
     return imgs
 
 
-def generate_for_corruption_type(seed: int, imgs: np.ndarray, corruption_type: str) -> np.ndarray:
-    # TODO Not yet implemented
-    pass
-
-
-def generate_datasets(fmnist_split: str, seed_add=0):
+def generate_datasets(fmnist_split: str):
     datasets.load_dataset_builder("fashion_mnist")
     dataset = load_dataset("fashion_mnist", split=fmnist_split)
 
-    np.save(f"generated/fmnist-c-{fmnist_split}-labels.npy", np.array(dataset['label']))
+    np.save(f"generated/npy/fmnist-c-{fmnist_split}-labels.npy", np.array(dataset['label']))
     generate_mix_dataset(dataset['image'], fmnist_split)
-
-    # TODO Generate for each corruption type
-
 
 
 if __name__ == "__main__":
