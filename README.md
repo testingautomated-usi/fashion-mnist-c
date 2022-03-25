@@ -13,7 +13,7 @@ The following corruptions are applied to the images, equivalently to MNIST-C:
 - **Blur** (glass and motion blurr)
 - **Transformations** (shear, scale, rotate, brightness, constrast, saturate, inverse)
 
-In addition, we apply various **image flippings**: For fashion images, flipping the image does not change it's label,
+In addition, we apply various **image flippings and turnings**: For fashion images, flipping the image does not change it's label,
 and still keeps it a valid image. However, we noticed that in the nominal fmnist dataset, most images are identically oriented 
 (e.g. most shoes point to the left side). Thus, flipped images provide valid OOD inputs.
 
