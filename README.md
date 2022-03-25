@@ -47,6 +47,8 @@ Simple Techniques Work Surprisingly Well for Neural Network Test Prioritization 
 (authors anonymized)
 ```
 
+Also, you may want to cite fmnist and mnist-c.
+
 ## Credits
 - FMNIST-C is inspired by Googles MNIST-C and our repository is essentially a clone of theirs. See their [paper](https://arxiv.org/abs/1906.02337) and [repo](https://github.com/google-research/mnist-c).
 - Find the nominal (i.e., non-corrupted) Fashion-MNIST dataset [here](https://github.com/zalandoresearch/fashion-mnist).
