@@ -31,6 +31,10 @@ Otherwise, this repository contains the binaries of the datasets in two formats:
 
 ## Examples
 
+| Turned  | Blurred | Rotated | Noise | Noise | Turned |
+| ------------- | ------------- | --------| --------- | -------- | --------- |
+| <img src="https://github.com/testingautomated-usi/fashion-mnist-c/raw/main/generated/png-examples/single_0.png" width="100" height="100">   | <img src="https://github.com/testingautomated-usi/fashion-mnist-c/raw/main/generated/png-examples/single_1.png" width="100" height="100"> |  <img src="https://github.com/testingautomated-usi/fashion-mnist-c/raw/main/generated/png-examples/single_6.png" width="100" height="100"> |  <img src="https://github.com/testingautomated-usi/fashion-mnist-c/raw/main/generated/png-examples/single_3.png" width="100" height="100"> |  <img src="https://github.com/testingautomated-usi/fashion-mnist-c/raw/main/generated/png-examples/single_4.png" width="100" height="100"> |  <img src="https://github.com/testingautomated-usi/fashion-mnist-c/raw/main/generated/png-examples/single_5.png" width="100" height="100"> |
+
 
 
 ## Citation
