@@ -23,7 +23,6 @@ Most corruptions are applied at a randomly selected level of *severity*, s.t. so
 
 The easiest way to use fmnist-c is through huggingface datasets:
 1. `pip install datasets`
-[//]: # (TODO De-Anonymize)
 3. **OMITTED** *(Huggingface dataset and corresponding instructions will be added here after the (double-blind!) review.)*
 
 Otherwise, this repository contains the binaries of the datasets in two formats:
