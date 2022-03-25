@@ -30,34 +30,7 @@ CORRUPTIONS: Dict[str, Callable[[np.ndarray], np.ndarray]] = {
     'flip_top_bottom': lambda x: additional_corruptions.turn_left(x),
 }
 
-# The following could potentially used for an "extended" dataset,
-#     but this is not implemented yet.
-# 'gaussian_noise': lambda x: mnist_c.gaussian_noise(x),
-# 'speckle_noise': lambda x: mnist_c.speckle_noise(x),
-# 'pessimal_noise': lambda x: mnist_c.pessimal_noise(x),
-# 'gaussian_blur': lambda x: mnist_c.gaussian_blur(x),
-# 'defocus_blur': lambda x: mnist_c.defocus_blur(x),
-# 'stripe': lambda x: mnist_c.stripe(x),
-# 'spatter': lambda x: mnist_c.spatter(x),
-# 'canny_edges': lambda x: mnist_c.canny_edges(x),
-# 'zoom_blur': lambda x: mnist_c.zoom_blur(x),
-# 'jpeg_compression': lambda x: mnist_c.jpeg_compression(x),
-# 'elastic_transform': lambda x: mnist_c.elastic_transform(x),
-# 'quantize': lambda x: mnist_c.quantize(x),
-# 'translate': lambda x: mnist_c.translate(x),
-# 'snow': lambda x: mnist_c.snow(x),
-
-
-# REMOVED MNIIST_C CORRUPTIONS:
-# 'fog': lambda x: mnist_c.fog(x),  # Removed as used GPL dependency
-# 'frost': lambda x: mnist_c.frost(x),
-# 'line': lambda x: mnist_c.line(x),
-# 'pixelate': lambda x: mnist_c.pixelate(x),  # Aleady pixely enough
-# 'identity': lambda x: mnist_c.identity(x),
-# 'dotted_line': lambda x: mnist_c.dotted_line(x),
-# 'zigzag': lambda x: mnist_c.zigzag(x),
-
-
+    
 def _random_corruption(rng: np.random.RandomState) -> str:
     return list(CORRUPTIONS.keys())[rng.randint(len(CORRUPTIONS))]
 
