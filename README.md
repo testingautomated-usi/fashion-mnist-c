@@ -40,14 +40,16 @@ Otherwise, this repository contains the binaries of the datasets in two formats:
 ## Citation
 If you use this dataset, please cite the following paper:
 
-[//]: # (TODO De-Anonymize)
-
 ```
-Simple Techniques Work Surprisingly Well for Neural Network Test Prioritization and Active Learning, Under Review,
-(authors anonymized)
+@inproceedings{Weiss2022SimpleTechniques,
+  title={Simple Techniques Work Surprisingly Well for Neural Network Test Prioritization and Active Learning},
+  author={Weiss, Michael and Tonella, Paolo},
+  booktitle={Proceedings of the 31th ACM SIGSOFT International Symposium on Software Testing and Analysis},
+  year={2022}
+}
 ```
 
-Also, you may want to cite fmnist and mnist-c.
+Also, you may want to cite FMNIST and MNIST-C.
 
 ## Credits
 - FMNIST-C is inspired by Googles MNIST-C and our repository is essentially a clone of theirs. See their [paper](https://arxiv.org/abs/1906.02337) and [repo](https://github.com/google-research/mnist-c).
