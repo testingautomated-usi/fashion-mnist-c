@@ -26,7 +26,7 @@ The easiest way to use fmnist-c is through huggingface datasets:
 3. **OMITTED** *(Huggingface dataset and corresponding instructions will be added here after the (double-blind!) review.)*
 
 Otherwise, this repository contains the binaries of the datasets in two formats:
-- `./generated/npy/...` Numpy arrays, to be loaded e.g. using `numpy.load(./generated/npy/fmnist-c-test.npy)`
+- `./generated/npy/...` Numpy arrays.
 - `./generated/ubyte/...` The file format used for the [original mnist dataset](http://yann.lecun.com/exdb/mnist/). These files can thus be used as drop-in replacements in most mnist dataset data loaders.
 
 ## Examples
