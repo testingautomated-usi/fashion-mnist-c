@@ -10,14 +10,14 @@ vision models.
 The following corruptions are applied to the images, equivalently to MNIST-C:
 
 - **Noise** (shot noise and impulse noise)
-- **Blur** (glass and motion blurr)
-- **Transformations** (shear, scale, rotate, brightness, constrast, saturate, inverse)
+- **Blur** (glass and motion blur)
+- **Transformations** (shear, scale, rotate, brightness, contrast, saturate, inverse)
 
-In addition, we apply various **image flippings and turnings**: For fashion images, flipping the image does not change it's label,
+In addition, we apply various **image flippings and turnings**: For fashion images, flipping the image does not change its label,
 and still keeps it a valid image. However, we noticed that in the nominal fmnist dataset, most images are identically oriented 
 (e.g. most shoes point to the left side). Thus, flipped images provide valid OOD inputs.
 
-Most corruptions are applied at a randomly selected level of *severity*, s.t. some corrupted images are really hard to classify where for others the corruption, while present, is subtle.
+Most corruptions are applied at a randomly selected level of *severity*, s.t. some corrupted images are really hard to classify whereas for others the corruption, while present, is subtle.
 
 ## Usage
 
