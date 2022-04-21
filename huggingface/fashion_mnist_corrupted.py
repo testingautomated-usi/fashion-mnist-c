@@ -34,14 +34,11 @@ _HOMEPAGE = "https://github.com/testingautomated-usi/fashion-mnist-c"
 _LICENSE = "https://github.com/testingautomated-usi/fashion-mnist-c/blob/main/LICENSE"
 
 if CONFIG.version == datasets.Version("1.0.0"):
-    # TODO Tag
-    pass
+    tag = "v1.0.0"
 else:
     raise ValueError("Unsupported version.")
 
-# TODO toggle after first tag
-# _URL = f"https://github.com/testingautomated-usi/fashion-mnist-c/blob/{_CURRENT_VERSION_TAG}/generated/npy/"
-_URL = "https://github.com/testingautomated-usi/fashion-mnist-c/raw/main/generated/npy/"
+_URL = f"https://github.com/testingautomated-usi/fashion-mnist-c/blob/{tag}/generated/npy/"
 
 _URLS = {
     "train_images": "fmnist-c-train.npy",
