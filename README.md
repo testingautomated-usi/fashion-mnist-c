@@ -4,7 +4,7 @@ This repository contains the source code used to create the FMNIST-C dataset, a
 corrupted Fashion-MNIST benchmark for testing out-of-distribution robustness of computer
 vision models.
 
-[FMNIST](https://github.com/zalandoresearch/fashion-mnist) is a drop-in replacement for MNIST and FMNIST-C is a corresponding drop-in replacement for [MNIST-C](https://arxiv.org/abs/1906.02337).
+[FMNIST](https://github.com/zalandoresearch/fashion-mnist) is a drop-in replacement for MNIST. FMNIST-C is a corresponding drop-in replacement for [MNIST-C](https://arxiv.org/abs/1906.02337).
 
 ## Corruptions
 The following corruptions are applied to the images, equivalently to MNIST-C:
