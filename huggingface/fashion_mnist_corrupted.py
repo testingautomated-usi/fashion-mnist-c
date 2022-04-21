@@ -38,7 +38,9 @@ if CONFIG.version == datasets.Version("1.0.0"):
 else:
     raise ValueError("Unsupported version.")
 
-_URL = f"https://github.com/testingautomated-usi/fashion-mnist-c/blob/{tag}/generated/npy/"
+_URL = (
+    f"https://github.com/testingautomated-usi/fashion-mnist-c/blob/{tag}/generated/npy/"
+)
 
 _URLS = {
     "train_images": "fmnist-c-train.npy",
