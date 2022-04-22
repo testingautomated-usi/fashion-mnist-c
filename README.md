@@ -1,4 +1,11 @@
 # FMNIST-C (Corrupted Fashion-Mnist)
+[![Lint & Test](https://github.com/testingautomated-usi/fashion-mnist-c/actions/workflows/main.yml/badge.svg)](https://github.com/testingautomated-usi/fashion-mnist-c/actions/workflows/main.yml)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+[![Docstr-Coverage](https://badgen.net/badge/docstr-coverage/100%25/green?cache=30)](https://github.com/HunterMcGushion/docstr_coverage)
+[![Python Version](https://img.shields.io/pypi/pyversions/corrupted-text)](https://img.shields.io/pypi/pyversions/corrupted-text)
+[![DOI](https://zenodo.org/badge/434567007.svg)](https://zenodo.org/badge/latestdoi/434567007)
+[![License](https://badgen.net/badge/license/mit/blue?cache=30)](https://github.com/testingautomated-usi/fashion-mnist-c/blob/main/LICENSE)
 
 This repository contains the source code used to create the FMNIST-C dataset, a
 corrupted Fashion-MNIST benchmark for testing out-of-distribution robustness of computer
