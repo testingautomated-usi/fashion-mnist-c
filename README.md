@@ -1,3 +1,6 @@
+Note: As no changes to this codebase are planned, this repository is archived. 
+If you have any questions, do not hesitate to contact us by email.
+
 # FMNIST-C (Corrupted Fashion-Mnist)
 [![Lint & Test](https://github.com/testingautomated-usi/fashion-mnist-c/actions/workflows/main.yml/badge.svg)](https://github.com/testingautomated-usi/fashion-mnist-c/actions/workflows/main.yml)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
